@@ -1,0 +1,61 @@
+<h1>CYPHER challenge 2025</h1>
+
+<p>
+The objective of the present challenge is to develop a data-driven/ML closure model for the sub-grid-scalar-flux (SGSF) term in turbulent reacting flows featuring hydrogen as a fuel.
+In the context of large eddy simulation (LES), the governing equation for filtered scalars, such as the filtered species mass fraction 
+<span>\(\widetilde{Y}_i\)</span> and/or the filtered mixture fraction <span>\(\widetilde{Z}\)</span> and progress/control variables <span>\(\widetilde{C}\)</span>, present the following unclosed SGSF term:
+</p>
+
+<p>
+<span>\(\overline{\rho} \, \widetilde{u} \, \widetilde{\mathcal{Y}} - \overline{\rho} \, \widetilde{u \mathcal{Y}}\)</span>, where <span>\(\mathcal{Y}\)</span> is a generic scalar quantity.
+Such a term is typically modeled in many LES approaches by resorting to the gradient assumption, and is therefore assumed to be proportional to the gradient of the filtered scalar quantity:
+</p>
+
+<p>
+\[ \overline{\rho} \, \widetilde{u} \, \widetilde{\mathcal{Y}} - \overline{\rho} \, \widetilde{u \mathcal{Y}} \approx  \overline{\rho} \alpha_{T,\mathcal{Y}} \nabla \widetilde{\mathcal{Y}} \]
+</p>
+
+<p>
+where <span>\(\alpha_{T,\mathcal{Y}}\)</span> is the turbulent diffusivity of the scalar <span>\(\mathcal{Y}\)</span>, which is typically estimated using the turbulent viscosity <span>\(\mu_T\)</span> and a turbulent Schmidt number as <span>\(\mu_T / Sc_T\)</span>.
+</p>
+
+<p>
+The objective of the present challenge is to develop data-driven/ML or hybrid models for the turbulent diffusivity <span>\(\alpha_T\)</span> of 3 representative scalars.
+The selected scalars are: the mixture fraction <span>\(Z\)</span>, and the mass fractions of water <span>\(\widetilde{Y}_{H_2O}\)</span> and hydrogen <span>\(\widetilde{Y}_{H_2}\)</span>.
+As a result, the final goal is to provide three models for <span>\(\alpha_{T,Z}\)</span>, <span>\(\alpha_{T,Y_{H_2O}}\)</span>, and <span>\(\alpha_{T,Y_{H_2}}\)</span>.
+</p>
+
+<p>
+The performance will be evaluated on the global term as reported in Eq. (1) at a reference LES grid size <span>\(\Delta\)</span> and integrated over the entire domain:
+</p>
+
+<p>
+\[ \epsilon = \int_V \| q_{\text{model}} - q_{\text{DNS}} \|_2 ~ dV + \beta_t \, t_{\text{testing}} \]
+</p>
+
+<p>
+where <span>\(\|\cdot\|_2\)</span> represents the <i>L</i>-2 norm,
+<span>\(q_{\text{model}} = \overline{\rho} \alpha_{T,\mathcal{Y}} \nabla \widetilde{\mathcal{Y}}\)</span> is the modeled flux, and
+<span>\(q_{\text{DNS}} = \overline{\rho} \, \widetilde{u} \, \widetilde{\mathcal{Y}} - \overline{\rho} \, \widetilde{u \mathcal{Y}}\)</span> is the reference value obtained by filtering the DNS.
+The testing time <span>\(t_{\text{testing}}\)</span> (model inference time) will be computed after submission, and <span>\(\beta_t\)</span> is a positive coefficient used to weight the two terms in the performance metric <span>\(\epsilon\)</span>.
+</p>
+
+<p>
+The overall performance is the sum of the performance evaluated on the three reference scalars:
+<span>\(\epsilon_Z + \epsilon_{Y_{H_2O}} + \epsilon_{Y_{H_2}}\)</span>.
+</p>
+
+<p>
+The reference data for this challenge comes from the "Premixed Flame H<sub>2</sub>-Air DNS in Slot Burner" dataset available via BlastNet: 
+<a href="https://blastnet.github.io/quentin2024" target="_blank">https://blastnet.github.io/quentin2024</a>.
+</p>
+
+<p>
+In particular, the training data can be selected from simulations with 
+<span>\(\phi = 0.35, 0.4, 0.6, 0.7\)</span>, while the testing data will be the flame with <span>\(\phi = 0.5\)</span> to evaluate model generalization to unseen conditions.
+</p>
+
+<p>
+The LES filters that can be used for training are <span>\(\Delta = H/20, H/10\)</span>, while testing must be performed at <span>\(\Delta = H/15\)</span>, where <span>\(H\)</span> is the width of the slot burner.
+The filtered data will be made available through Kaggle, along with the filtering code.
+</p>
