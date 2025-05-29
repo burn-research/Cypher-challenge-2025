@@ -3,4 +3,5 @@ Challenge on machine learning for turbulent combustion modeling organised for th
 
 ![](https://raw.githubusercontent.com/burn-research/Cypher-challenge-2025/refs/heads/main/images/Challenge_overview_pic.png)
 
+## Overview
 
