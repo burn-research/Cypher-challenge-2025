@@ -85,6 +85,12 @@ verbose = True # outputs messages to stdout and stderr for debug purposes
 # >0: prints additional information useful for debugging
 debug_mode = 0
 
+# Save previous results:
+########################
+# If set to true the old results are saved in a different output folder.
+# useful if running the code locally
+save_previous_results = False
+
 # List libraries and python version:
 ####################################
 # When set to True, shows all the available libraries in the docker with the 
