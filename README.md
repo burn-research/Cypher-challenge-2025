@@ -19,3 +19,4 @@ This challenge strives to provide a benchmark for model assessment in the contex
 
 Participants will be asked to submit a python code that defines a machine learning model, which will be trained after submission with the available data. All the models submitted will be evaluated on out-of-sample data. Tests in this contest will only be performed _a priori_ on the DNS dataset. As future research perspectives aim at coupling these models with Computational Fluid Dynamics (CFD) codes for _a posteriori_ validation, we apply penalisation accounting for the model's inference time. 
 
+
