@@ -45,7 +45,7 @@ verbose = True # outputs messages to stdout and stderr for debug purposes
 ###################################
 # Coefficient to tune to balance between MSE loss and inference time
 beta = 1e6
-beta_MSE = 5e2
+beta_MSE = 1e3
 
 # Constant used for a missing score
 missing_score = -0.999999
