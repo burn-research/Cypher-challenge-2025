@@ -255,7 +255,7 @@ class model(nn.Module):
         # (see preprocess function)
         
         rho = Y[:, 3].unsqueeze(1)
-        grad_C = Y[:, 4:7]
+        grad_C = Y[:, 4:6]
         
         Y_pred = rho * alpha_t * grad_C
         

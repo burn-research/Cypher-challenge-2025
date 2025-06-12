@@ -98,6 +98,7 @@ leaderboards:
     sorting: asc
     computation: null
     computation_indexes: null
+    numeric_format: 5    
   - title: Inference time [s*10^-6]
     key: time_inference
     index: 2
@@ -128,6 +129,7 @@ leaderboards:
     sorting: asc
     computation: null
     computation_indexes: null
+    numeric_format: 5    
   - title: Inference time [s*10^-6]
     key: time_inference
     index: 2
