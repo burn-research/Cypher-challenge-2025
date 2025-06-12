@@ -17,8 +17,8 @@ from utils import product, sample_indices, mute_print
 class DataLoader():
     def __init__(self, data_folder, verbose=True):
         self.is_read = False
-        self.phi_list =  ["0.4"] # ['0.4', '0.6', '0.7'] # List of equivalence ratios included in the training data
-        self.delta_list = ['8'] # ['4', '8']         # List of filter sizes included in the training data
+        self.phi_list =  ['0.4', '0.6', '0.7'] # ["0.4"] # ['0.4', '0.6', '0.7'] # List of equivalence ratios included in the training data
+        self.delta_list = ['4', '8'] # ['8'] # ['4', '8']         # List of filter sizes included in the training data
         
         self.read(data_folder)
 
