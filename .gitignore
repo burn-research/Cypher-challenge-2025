@@ -178,3 +178,4 @@ bundle/.DS_Store
 .DS_Store
 bundle/.DS_Store
 bundle/data_directory/
+bundle/input_data/test
