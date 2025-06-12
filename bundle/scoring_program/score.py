@@ -45,6 +45,7 @@ verbose = True # outputs messages to stdout and stderr for debug purposes
 ###################################
 # Coefficient to tune to balance between MSE loss and inference time
 beta = 1e6
+beta_MSE = 5e2
 
 # Constant used for a missing score
 missing_score = -0.999999
@@ -143,7 +144,7 @@ if __name__ == "__main__":
     C_grad = np.hstack([field.C_grad_X.reshape_column(), field.C_grad_Y.reshape_column(), field.C_grad_Z.reshape_column()])
     Tau    = np.hstack([field.TAU_C_X.reshape_column(), field.TAU_C_Y.reshape_column(), field.TAU_C_Z.reshape_column()])
     mse    = loss(alpha_t, field.RHO.value, C_grad, Tau)
-    score  = mse + beta*inference_time_per_sample
+    score  = beta_MSE*mse + beta*inference_time_per_sample
     
   
     # ======== Write the scores in the score file
