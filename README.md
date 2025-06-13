@@ -53,9 +53,19 @@ After submitting the file, the platform will start processing the data. Loading 
 
 The window in red will output the statements from the backend. The model submitted can contain print statements that will be shown as output, which can be useful for debugging purposes. After the ingestion and scoring programs are done, you can click on the green highlighted button to download the outputs of the training, and check the log files with the output and errors, if any.
 
+When multiple submissions are presented, the best one (lower scoring) can manually be selected to be added to the leaderboard:
+<p align="center">
+  <img src="images/add_to_leaderboard.png" alt="leaderboard" width="90%">
+</p>
+
+After being added to the leaderboard, the scoring should be visible in the results section:
+<p align="center">
+  <img src="images/results.png" alt="results" width="90%">
+</p>
 
 
 ## Organizing committee
+
 
 
 
