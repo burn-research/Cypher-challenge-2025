@@ -48,7 +48,7 @@ The present method must return the sub-filter turbulent diffusivity of the progr
 After submitting the file, the platform will start processing the data. Loading the app may take a few minutes. After the backend is ready and the docker image is loaded, you should see an output similar to the one represented below. Successive submissions without refreshing the page should be faster than the initial one.
 
 <p align="center">
-  <img src="images/after_submission" alt="after submission" width="90%">
+  <img src="images/after_submission.png" alt="after submission" width="90%">
 </p>
 
 The window in red will output the statements from the backend. The model submitted can contain print statements that will be shown as output, which can be useful for debugging purposes. After the ingestion and scoring programs are done, you can click on the green highlighted button to download the outputs of the training, and check the log files with the output and errors, if any.
