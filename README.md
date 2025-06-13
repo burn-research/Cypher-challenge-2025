@@ -1,12 +1,12 @@
 # Cypher-challenge-2025
-Challenge on machine learning for turbulent combustion modeling organised within the context of the CYPHER COST Action https://cypher.ulb.be/
+Challenge on machine learning for turbulent combustion modeling organised within the context of the [CYPHER COST Action](https://cypher.ulb.be/)
 <p align="center">
   <img src="images/Challenge_overview_pic.png" alt="Challenge Overview" width="90%">
 </p>
 
 ## Overview
 Combustion systems play a vital role in transportation, energy production, and residential heating. Nonetheless, current combustion systems heavily rely on fossil fuels, whose burning process is now acknowledged as a source of greenhouse gases and consequently responsible for climate change.
-While completely dismantling our reliance on combustion is unfeasible for the so-called 'hard-to-abate industries' [ https://doi.org/10.1016/j.resconrec.2024.107796 ], existing combustion processes can significantly reduce their CO2 emissions. In this context, the CYPHER COST action is dedicated to advancing the understanding of Renewable Synthetic Fuels (RSFs) combustion, high-fidelity simulations, hybrid physics-based data-driven models, and self-updating digital twins. 
+While completely dismantling our reliance on combustion is unfeasible for the so-called 'hard-to-abate industries' [[1](https://doi.org/10.1016/j.resconrec.2024.107796 )], existing combustion processes can significantly reduce their CO2 emissions. In this context, the CYPHER COST action is dedicated to advancing the understanding of Renewable Synthetic Fuels (RSFs) combustion, high-fidelity simulations, hybrid physics-based data-driven models, and self-updating digital twins. 
 
 Regarding combustion simulations, the Large eddy simulations (LES) stand as a powerful approach for studying turbulent combustion. LES directly resolves the large, energy-containing motions in the flow and filters out the smaller scales. Advances in high-performance computing and efficient algorithms have made this method increasingly accessible for practical use, but modeling the so-called sub-filter phenomena that arise at the unresolved smaller scales is still a challenging task, in particular for RSFs. While significant past efforts from the scientific community have developed physics-based methods to link sub-filter quantities to the resolved LES field, nowadays, approaches based on high-fidelity data are becoming popular. Within this framework, machine learning (ML) is an interesting tool in improving turbulent combustion closure models for LES. Typical ML algorithms, such as Neural Networks, can analyze large datasets from direct numerical simulations (DNS), which provide highly accurate representations of turbulence and chemistry interactions. Recent studies highlight the potential of machine learning algorithms to develop closure models that outperform traditional physics-based approaches. 
 
@@ -42,7 +42,20 @@ The model.py script must define an object, named 'model', that will be read from
   field = ap.Field3D(valid_data_folder)
   ```
   Another trivial but important consideration regards the data scaling, which should be handled in the same way both during the training and testing process. The scaling parameters must not be updated during inference.
-The present method must return the sub-filter turbulent diffusivity of the progress variable, alpha_t, that will be used to evaluate the model:
+The present method must return the sub-filter turbulent diffusivity of the progress variable, alpha_t, that will be used to evaluate the model. More details on the model form can be found in the document on the [Cypher website](https://cypher.ulb.be/data-challenge/).
+
+## After submission
+After submitting the file, the platform will start processing the data. Loading the app may take a few minutes. After the backend is ready and the docker image is loaded, you should see an output similar to the one represented below. Successive submissions without refreshing the page should be faster than the initial one.
+
+<p align="center">
+  <img src="images/after_submission" alt="after submission" width="90%">
+</p>
+
+The window in red will output the statements from the backend. The model submitted can contain print statements that will be shown as output, which can be useful for debugging purposes. After the ingestion and scoring programs are done, you can click on the green highlighted button to download the outputs of the training, and check the log files with the output and errors, if any.
+
+
+
+## Organizing committee
 
 
 
