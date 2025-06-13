@@ -18,7 +18,7 @@ Participants will be asked to submit a Python code that defines a machine learni
 All the technical information can be found at https://cypher.ulb.be/data-challenge/
 
 ## Submission guidelines
-Participants can join the challenge through the following link: https://www.codabench.org/competitions/9172/
+Participants can join the challenge through the link https://www.codabench.org/competitions/9173/
 The link will lead to the following page:
 
 <p align="center">
