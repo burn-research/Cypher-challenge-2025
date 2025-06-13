@@ -17,7 +17,7 @@ Participants will be asked to submit a Python code that defines a machine learni
 
 All the technical information can be found at https://cypher.ulb.be/data-challenge/
 
-## How to participate
+## Submission guidelines
 Participants can join the challenge through the following link: https://www.codabench.org/competitions/9172/
 The link will lead to the following page:
 
@@ -30,3 +30,5 @@ after clicking on the highlighted "My Submissions" section, you will be able to 
 <p align="center">
   <img src="images/submission.png" alt="homepage" width="90%">
 </p>
+
+an example file for submission is the 'sample_code_submission.zip' in the present GitHub folder. The [uncompressed folder](sample_code_submission) allows to explore the structure of the python code to be submitted
