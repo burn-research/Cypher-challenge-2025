@@ -66,7 +66,9 @@ After being added to the leaderboard, the scoring should be visible in the resul
 
 ## Organizing committee
 
-
+<p align="center">
+  <img src="images/organizing_committee.png" alt="organizing committee" width="90%">
+</p>
 
 
 
