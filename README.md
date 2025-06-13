@@ -31,4 +31,10 @@ after clicking on the highlighted "My Submissions" section, you will be able to 
   <img src="images/submission.png" alt="homepage" width="90%">
 </p>
 
-an example file for submission is the 'sample_code_submission.zip' in the present GitHub folder. The [uncompressed folder](sample_code_submission) allows to explore the structure of the python code to be submitted
+an example file for submission is the 'sample_code_submission.zip' in the present GitHub folder. The [uncompressed folder](sample_code_submission) allows to explore the structure of the python code to be submitted. The only mandatory file that must be present at the moment of submission is the 'model.py' file. Every other kind of module is allowed in the submission folder, but additional data or pretrained models are not allowed in the present context. The organizers of the challenge reserve the right to check the submission files to verify those restrictions are respected.
+
+The model.py script must define an object, named 'model', that will be read from the ingestion program. The object can leverage tensorflow, pytorch, or scikit_learn to inherit, based on the user's preferences. The object must have 3 fundamental methods, which will be called when the file is submitted:
+- ```preprocess(self, data_folder):``` takes as input the relative path to the [training data folder](bundle/input_data/train) and process those data. The method must return an object (in the following referred to as D) that will be handled by the ```fit()``` method to train the model. The preprocessing can include every operation on the data in the folder that is useful to obtain better predictive capabilities (gradients computation, further filtering of the data for scale similarity models, etc...).
+- ```fit(self, D):``` trains the model based on the processed data contained in the object D. The method does not return outputs, but can update the object attributes (e.g. the weights of the neural networks).
+- ```predict(self, valid_data_folder):``` takes as input the relative path to the [validation data folder](bundle/input_data/valid). **IMPORTANT**: the validation data folder 
+
