@@ -36,5 +36,14 @@ an example file for submission is the 'sample_code_submission.zip' in the presen
 The model.py script must define an object, named 'model', that will be read from the ingestion program. The object can leverage tensorflow, pytorch, or scikit_learn to inherit, based on the user's preferences. The object must have 3 fundamental methods, which will be called when the file is submitted:
 - ```preprocess(self, data_folder):``` takes as input the relative path to the [training data folder](bundle/input_data/train) and process those data. The method must return an object (in the following referred to as D) that will be handled by the ```fit()``` method to train the model. The preprocessing can include every operation on the data in the folder that is useful to obtain better predictive capabilities (gradients computation, further filtering of the data for scale similarity models, etc...).
 - ```fit(self, D):``` trains the model based on the processed data contained in the object D. The method does not return outputs, but can update the object attributes (e.g. the weights of the neural networks).
-- ```predict(self, valid_data_folder):``` takes as input the relative path to the [validation data folder](bundle/input_data/valid). **IMPORTANT**: the validation data folder 
+- ```predict(self, valid_data_folder):``` takes as input the relative path to the [validation data folder](bundle/input_data/valid/). **IMPORTANT**: the validation data folder path refers directly to the field containing folder, so the method does not have to explore the different conditions of equivalence ratios and filter sizes. The relative path is passed to this method in such a way that the field can be immediately read with the [aPriori](https://github.com/LorenzoPiu/aPrioriDNS) package  with one line of code:
+  ```python
+  import aPrioriDNS as ap
+  field = ap.Field3D(valid_data_folder)
+  ```
+  Another trivial but important consideration regards the data scaling, which should be handled in the same way both during the training and testing process. The scaling parameters must not be updated during inference.
+The present method must return the sub-filter turbulent diffusivity of the progress variable, alpha_t, that will be used to evaluate the model:
+
+
+
 
