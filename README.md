@@ -17,6 +17,6 @@ Participants will be asked to submit a Python code that defines a machine learni
 
 All the technical information can be found at https://cypher.ulb.be/data-challenge/
 
-
-
+## How to participate
+Participants can join the challenge through the following link: 
 
