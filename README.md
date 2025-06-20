@@ -28,7 +28,7 @@ The link will lead to the following page:
 after clicking on the highlighted "My Submissions" section, you will be able to submit your model:
 
 <p align="center">
-  <img src="images/submission.png" alt="homepage" width="90%">
+  <img src="images/Submission_2.png" alt="homepage" width="90%">
 </p>
 
 an example file for submission is the 'sample_code_submission.zip' in the present GitHub folder. The [uncompressed folder](sample_code_submission) allows to explore the structure of the python code to be submitted. The only mandatory file that must be present at the moment of submission is the 'model.py' file. Every other kind of module is allowed in the submission folder, but additional data or pretrained models are not allowed in the present context. The organizers of the challenge reserve the right to check the submission files to verify those restrictions are respected.
